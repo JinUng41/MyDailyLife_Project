@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Diary View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="DiaryViewController" id="Y6W-OH-hqX" customClass="DiaryViewController" customModule="MyDailyLife" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pencil.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ZiM-eh-7Jl">
+                                <rect key="frame" x="20" y="75" width="40" height="38.666666666666671"/>
+                                <color key="tintColor" systemColor="systemGreenColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="Nnf-zg-poY"/>
+                                    <constraint firstAttribute="height" constant="40" id="n16-18-uJv"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="일기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iMz-N5-nD6">
+                                <rect key="frame" x="70" y="74" width="60.666666666666657" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="jud-Bo-D1U"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qhF-qX-EkF">
+                                <rect key="frame" x="321.66666666666669" y="74" width="48.333333333333314" height="59"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" imagePlacement="top" title="저장" imagePadding="10">
+                                    <imageReference key="image" image="checkmark" catalog="system" renderingMode="template"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="15"/>
+                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="applyButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="JiO-wA-hp9"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="uec-Uy-11g">
+                                <rect key="frame" x="20" y="144" width="350" height="30"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="날짜 : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="87i-Z4-uOy">
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="jag-gy-wcq"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="qAr-am-hVX">
+                                        <rect key="frame" x="250" y="0.0" width="100" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="X0m-2F-4NX"/>
+                                            <constraint firstAttribute="height" constant="30" id="dX5-DL-KcS"/>
+                                        </constraints>
+                                        <locale key="locale" localeIdentifier="ko"/>
+                                        <connections>
+                                            <action selector="changeDiaryDate:" destination="Y6W-OH-hqX" eventType="valueChanged" id="E0k-tf-8q9"/>
+                                        </connections>
+                                    </datePicker>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m6U-bl-Uee">
+                                <rect key="frame" x="160" y="204" width="70" height="77"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="smiley.fill" catalog="system" imagePlacement="top" title="좋아" imagePadding="10">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="30"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="selectEmoButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="53e-fk-eCr"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="lEe-0D-z1v">
+                                <rect key="frame" x="20" y="291" width="350" height="0.0"/>
+                                <subviews>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yTr-y2-G48">
+                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="77"/>
+                                        <color key="tintColor" systemColor="systemYellowColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="smiley.fill" catalog="system" imagePlacement="top" title="좋아" imagePadding="10">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="30"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="happyTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="2AG-Kx-Trp"/>
+                                        </connections>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oFj-aZ-VMN">
+                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="77"/>
+                                        <color key="tintColor" systemColor="systemGreenColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="smiley.fill" catalog="system" imagePlacement="top" title="평온" imagePadding="10">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="30"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="normalTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="NTm-v1-hrA"/>
+                                        </connections>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kgZ-7B-LvE">
+                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="77"/>
+                                        <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="smiley.fill" catalog="system" imagePlacement="top" title="피곤" imagePadding="10">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="30"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="tiredTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="MgP-pw-cSa"/>
+                                        </connections>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DYq-Ra-Gqt">
+                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="77"/>
+                                        <color key="tintColor" systemColor="systemRedColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="smiley.fill" catalog="system" imagePlacement="top" title="짜증" imagePadding="10">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="30"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="annoyTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="jHE-Ce-kku"/>
+                                        </connections>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MdH-VG-0Ko">
+                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="77"/>
+                                        <color key="tintColor" systemColor="systemBlueColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="smiley.fill" catalog="system" imagePlacement="top" title="슬퍼" imagePadding="10">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="30"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="sadTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="os9-RP-4Bn"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4Al-Ae-DVs">
+                                <rect key="frame" x="20" y="340" width="350" height="200"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="Ihe-qn-Nc2"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="4Al-Ae-DVs" firstAttribute="trailing" secondItem="uec-Uy-11g" secondAttribute="trailing" id="0M5-0H-v8C"/>
+                            <constraint firstItem="iMz-N5-nD6" firstAttribute="top" secondItem="ZiM-eh-7Jl" secondAttribute="top" id="6ZU-5j-LiQ"/>
+                            <constraint firstItem="lEe-0D-z1v" firstAttribute="trailing" secondItem="uec-Uy-11g" secondAttribute="trailing" id="74y-uP-8dS"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="4Al-Ae-DVs" secondAttribute="bottom" constant="270" id="8cp-Ua-Ec9"/>
+                            <constraint firstItem="m6U-bl-Uee" firstAttribute="top" secondItem="uec-Uy-11g" secondAttribute="bottom" constant="30" id="AdI-Pn-8H4"/>
+                            <constraint firstItem="ZiM-eh-7Jl" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="30" id="JfZ-qv-Z1J"/>
+                            <constraint firstItem="uec-Uy-11g" firstAttribute="trailing" secondItem="qhF-qX-EkF" secondAttribute="trailing" id="K7h-oc-zY6"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="m6U-bl-Uee" secondAttribute="trailing" constant="160" id="Kdd-lv-Ydc"/>
+                            <constraint firstItem="uec-Uy-11g" firstAttribute="leading" secondItem="ZiM-eh-7Jl" secondAttribute="leading" id="M9S-Aw-uJm"/>
+                            <constraint firstItem="ZiM-eh-7Jl" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="MLk-om-nqC"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="qhF-qX-EkF" secondAttribute="trailing" constant="20" id="S54-pq-0VH"/>
+                            <constraint firstItem="iMz-N5-nD6" firstAttribute="leading" secondItem="ZiM-eh-7Jl" secondAttribute="trailing" constant="10" id="UK9-1f-1Ms"/>
+                            <constraint firstItem="lEe-0D-z1v" firstAttribute="top" secondItem="m6U-bl-Uee" secondAttribute="bottom" constant="10" id="V72-4N-cwQ"/>
+                            <constraint firstItem="lEe-0D-z1v" firstAttribute="leading" secondItem="uec-Uy-11g" secondAttribute="leading" id="Y4I-Er-jCe"/>
+                            <constraint firstItem="4Al-Ae-DVs" firstAttribute="leading" secondItem="uec-Uy-11g" secondAttribute="leading" id="iC9-V6-4XU"/>
+                            <constraint firstItem="qhF-qX-EkF" firstAttribute="top" secondItem="ZiM-eh-7Jl" secondAttribute="top" id="ryB-0e-IGg"/>
+                            <constraint firstItem="m6U-bl-Uee" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="160" id="tjJ-xc-Byp"/>
+                            <constraint firstItem="uec-Uy-11g" firstAttribute="top" secondItem="ZiM-eh-7Jl" secondAttribute="bottom" constant="30" id="yTi-ow-QBM"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="annoyButton" destination="DYq-Ra-Gqt" id="kZK-wG-DcA"/>
+                        <outlet property="applyButton" destination="qhF-qX-EkF" id="dIN-Pr-1Yn"/>
+                        <outlet property="currentView" destination="5EZ-qb-Rvc" id="qnL-kn-Itb"/>
+                        <outlet property="diaryDatePicker" destination="qAr-am-hVX" id="a45-RU-Mbc"/>
+                        <outlet property="diaryTextView" destination="4Al-Ae-DVs" id="JBJ-vm-BiD"/>
+                        <outlet property="emotionStackView" destination="lEe-0D-z1v" id="l6c-tQ-jX9"/>
+                        <outlet property="happyButton" destination="yTr-y2-G48" id="rcG-xP-TWb"/>
+                        <outlet property="normalButton" destination="oFj-aZ-VMN" id="5l5-xM-2fs"/>
+                        <outlet property="sadButton" destination="MdH-VG-0Ko" id="nVg-Yk-NuT"/>
+                        <outlet property="selectEmoButton" destination="m6U-bl-Uee" id="8Ya-Vd-HL9"/>
+                        <outlet property="tiredButton" destination="kgZ-7B-LvE" id="OJK-es-gcL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="86" y="91"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="checkmark" catalog="system" width="128" height="114"/>
+        <image name="pencil.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="smiley.fill" catalog="system" width="128" height="121"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

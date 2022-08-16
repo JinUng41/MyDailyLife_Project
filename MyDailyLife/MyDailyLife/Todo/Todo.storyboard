@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Todo View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="TodoViewController" id="Y6W-OH-hqX" customClass="TodoViewController" customModule="FloatingActionButton" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="cbx-MD-VyW">
+                                <rect key="frame" x="20" y="75" width="40" height="38.666666666666671"/>
+                                <color key="tintColor" systemColor="systemYellowColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="YBf-vj-n2Q"/>
+                                    <constraint firstAttribute="width" constant="40" id="vhH-g9-zL9"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="할 일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TtP-Yk-dix">
+                                <rect key="frame" x="70" y="74" width="68" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Ygx-X0-FaO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dni-jW-PVk">
+                                <rect key="frame" x="321.66666666666669" y="74" width="48.333333333333314" height="59"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" imagePlacement="top" title="저장" imagePadding="10">
+                                    <imageReference key="image" image="checkmark" catalog="system" renderingMode="template"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="15"/>
+                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="applyButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="AhG-Pj-ovG"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" 할 일 추가" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="UP6-NW-DHx">
+                                <rect key="frame" x="20" y="144" width="350" height="31.666666666666657"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES" smartInsertDeleteType="no" smartQuotesType="no"/>
+                            </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="q1q-0M-9ge">
+                                <rect key="frame" x="20" y="205.66666666666666" width="350" height="30"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="날짜 : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hUc-Oy-eac">
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="fxb-bN-1CY"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="k5y-9T-tMF">
+                                        <rect key="frame" x="250" y="0.0" width="100" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="BhJ-Ec-fV0"/>
+                                            <constraint firstAttribute="width" constant="100" id="ocr-QV-EXd"/>
+                                        </constraints>
+                                        <locale key="locale" localeIdentifier="ko"/>
+                                        <connections>
+                                            <action selector="changeTodoDate:" destination="Y6W-OH-hqX" eventType="valueChanged" id="17I-6v-RwS"/>
+                                        </connections>
+                                    </datePicker>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="UP6-NW-DHx" firstAttribute="top" secondItem="cbx-MD-VyW" secondAttribute="bottom" constant="30" id="6HR-cR-rZo"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="dni-jW-PVk" secondAttribute="trailing" constant="20" id="7Vn-cS-YBP"/>
+                            <constraint firstItem="cbx-MD-VyW" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="30" id="8PE-xp-zmA"/>
+                            <constraint firstItem="dni-jW-PVk" firstAttribute="top" secondItem="cbx-MD-VyW" secondAttribute="top" id="IoZ-bU-cTp"/>
+                            <constraint firstItem="cbx-MD-VyW" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="JSL-y4-YP5"/>
+                            <constraint firstItem="UP6-NW-DHx" firstAttribute="leading" secondItem="cbx-MD-VyW" secondAttribute="leading" id="NL6-71-oqL"/>
+                            <constraint firstItem="q1q-0M-9ge" firstAttribute="trailing" secondItem="UP6-NW-DHx" secondAttribute="trailing" id="Umq-c7-uEx"/>
+                            <constraint firstItem="q1q-0M-9ge" firstAttribute="leading" secondItem="UP6-NW-DHx" secondAttribute="leading" id="X5k-mn-6sC"/>
+                            <constraint firstItem="TtP-Yk-dix" firstAttribute="top" secondItem="cbx-MD-VyW" secondAttribute="top" id="bH8-ep-Rtc"/>
+                            <constraint firstItem="UP6-NW-DHx" firstAttribute="trailing" secondItem="dni-jW-PVk" secondAttribute="trailing" id="p3R-ze-9w6"/>
+                            <constraint firstItem="TtP-Yk-dix" firstAttribute="leading" secondItem="cbx-MD-VyW" secondAttribute="trailing" constant="10" id="qoG-YN-Xz8"/>
+                            <constraint firstItem="q1q-0M-9ge" firstAttribute="top" secondItem="UP6-NW-DHx" secondAttribute="bottom" constant="30" id="zQU-R6-UcU"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="applyButton" destination="dni-jW-PVk" id="9Kc-03-e1A"/>
+                        <outlet property="titleTextField" destination="UP6-NW-DHx" id="5sc-FT-2HD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="86" y="91"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="checkmark" catalog="system" width="128" height="114"/>
+        <image name="checkmark.circle.fill" catalog="system" width="128" height="121"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
