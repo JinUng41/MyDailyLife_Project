@@ -1,5 +1,6 @@
 
 import UIKit
+import FSCalendar
 
 class ViewController: UIViewController {
 
@@ -9,6 +10,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var todoButton: UIButton!
     @IBOutlet weak var diaryButton: UIButton!
     
+    @IBOutlet var currentView: UIView!
+    @IBOutlet weak var calendarView: FSCalendar!
+
+    
+    var events: Array<Date> = []
+
     // show 상태일 때, 배경 어둡게 처리
     lazy var floatingDimView: UIView = {
         let view = UIView(frame: self.view.frame)
@@ -29,6 +36,55 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        floatingStackView.layer.zPosition = 99
+        floatingButton.layer.zPosition = 99
+        
+        scheduleButton.layer.zPosition = 99
+        diaryButton.layer.zPosition = 99
+        todoButton.layer.zPosition = 99
+        
+        currentView.bringSubviewToFront(floatingStackView)
+        setEvents()
+        
+        configureCalendar()
+        
+        calendarView.delegate = self
+        calendarView.dataSource = self
+    }
+    
+    private func configureCalendar() {
+        calendarView.locale = Locale(identifier: "ko_KR")
+        calendarView.headerHeight = 60
+        calendarView.weekdayHeight = 30
+        calendarView.appearance.headerMinimumDissolvedAlpha = 0.0
+        calendarView.appearance.headerDateFormat = "YYYY년 M월"
+        calendarView.appearance.headerTitleColor = .label
+        calendarView.appearance.headerTitleFont = UIFont(name: "NotoSansCJKKR-Medium", size: 16)
+        calendarView.appearance.titleFont = UIFont(name: "Roboto-Regular", size: 14)
+        
+        calendarView.appearance.eventDefaultColor = .systemGreen
+        calendarView.appearance.eventSelectionColor = .systemGreen
+        
+        calendarView.appearance.borderRadius = 1
+        calendarView.appearance.todayColor = .blue
+        calendarView.appearance.selectionColor = .lightGray
+        calendarView.appearance.titleDefaultColor = .label
+//        calendarView.appearance.titleWeekendColor = .red
+        calendarView.appearance.titleTodayColor = .white
+        calendarView.appearance.titleSelectionColor = .black
+        calendarView.appearance.weekdayTextColor = .label
+        calendarView.placeholderType = .none
+//        calendarView.layer.cornerRadius = 15
+        
+    }
+    
+    private func setEvents() {
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "ko_KR")
+        formatter.dateFormat = "yyyy-MM-dd"
+        let xmas = formatter.date(from: "2022-12-25")
+        let sampledate = formatter.date(from: "2022-08-22")
+        events = [xmas!, sampledate!]
     }
     
     // 플로팅 버튼이 눌렸을 때 동작하는 함수
@@ -99,6 +155,25 @@ class ViewController: UIViewController {
         let vc = storyboard.instantiateViewController(withIdentifier: "DiaryViewController") as! DiaryViewController
         present(vc, animated: true)
     }
+}
+
+extension ViewController: FSCalendarDelegate, FSCalendarDataSource {
+    func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
+        if self.events.contains(date) {
+            return 1
+        }
+        return 0
+    }
     
-    
+    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        let storyboard = UIStoryboard(name: "Detail", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM.dd EEE요일"
+        let dateString = dateFormatter.string(from: date)
+        
+        vc.dateString = dateString
+        present(vc, animated: true)
+    }
 }

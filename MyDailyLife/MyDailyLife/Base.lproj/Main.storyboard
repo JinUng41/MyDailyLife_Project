@@ -17,6 +17,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="frD-oy-TR0" customClass="FSCalendar">
+                                <rect key="frame" x="0.0" y="44" width="390" height="766"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="ZCb-vM-RKj">
                                 <rect key="frame" x="300" y="705" width="50" height="75"/>
                                 <subviews>
@@ -90,10 +94,16 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ZCb-vM-RKj" secondAttribute="bottom" constant="30" id="Nok-he-kzJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="frD-oy-TR0" secondAttribute="trailing" id="RlK-Gy-box"/>
+                            <constraint firstItem="frD-oy-TR0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Sga-hQ-tTV"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZCb-vM-RKj" secondAttribute="trailing" constant="40" id="XU7-zM-CHF"/>
+                            <constraint firstItem="frD-oy-TR0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="YIR-BP-ejM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="frD-oy-TR0" secondAttribute="bottom" id="cte-23-MDN"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="calendarView" destination="frD-oy-TR0" id="WZg-ey-JOV"/>
+                        <outlet property="currentView" destination="8bC-Xf-vdC" id="kDU-sf-cDa"/>
                         <outlet property="diaryButton" destination="FiV-f0-bdo" id="2Rh-qu-6Dn"/>
                         <outlet property="floatingButton" destination="uqk-uc-GaP" id="17r-3x-zwD"/>
                         <outlet property="floatingStackView" destination="ZCb-vM-RKj" id="RPT-dT-rmU"/>
