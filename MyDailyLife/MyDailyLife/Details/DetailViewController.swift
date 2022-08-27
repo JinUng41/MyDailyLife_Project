@@ -6,16 +6,24 @@
 //
 
 import UIKit
+import RealmSwift
 
 class DetailViewController: UIViewController {
     
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var diaryButton: UIButton!
-
+    
+    var currentDate: Date!
     var dateString: String!
     let scheduleList = UserData.schedule
     let todoList = UserData.todo
+    
+    let localRealm = try! Realm() // Realm 데이터를 저장할 localRealm 상수 선언
+
+    var scheduleTask: Results<Schedule>!
+    var todoTask: Results<Todo>!
+    var diaryTask: Results<Diary>!
     
     var dataSource: UICollectionViewDiffableDataSource<Section, Item>!
     typealias Item = UserData
@@ -31,9 +39,19 @@ class DetailViewController: UIViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // 배열의 Realm의 데이터 초기화
+        scheduleTask = localRealm.objects(Schedule.self)
+        todoTask = localRealm.objects(Todo.self)
+        diaryTask = localRealm.objects(Diary.self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         diaryButton.layer.zPosition = 999
+
         dateLabel.text = dateString
         dataSource = UICollectionViewDiffableDataSource<Section,Item>(collectionView: collectionView, cellProvider: { collectionView, indexPath, item in
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CalendarDetailCell", for: indexPath) as? CalendarDetailCell else {
@@ -65,13 +83,13 @@ class DetailViewController: UIViewController {
     
     private func layout() -> UICollectionViewCompositionalLayout {
         
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .estimated(30))
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(30))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(50))
         let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem: item, count: 1)
         let section = NSCollectionLayoutSection(group: group)
-        let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(50))
+        let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(40))
         let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
         section.boundarySupplementaryItems = [header]
         section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 20, bottom: 30, trailing: 20)

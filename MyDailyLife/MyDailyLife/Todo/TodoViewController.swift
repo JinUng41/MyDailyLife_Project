@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class TodoViewController: UIViewController {
 
@@ -14,8 +15,10 @@ class TodoViewController: UIViewController {
     @IBOutlet weak var todoDatePicker: UIDatePicker! // 할 일 datePicker
     
     private var todoTitle: String!
-    private var todoDate: String!
-    
+    private var todoDate: Date!
+
+    let localRealm = try! Realm() // Realm 데이터를 저장할 localRealm 상수 선언
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,20 +34,35 @@ class TodoViewController: UIViewController {
     // datepicker를 이용해 날짜를 지정하기
     @IBAction func changeTodoDate(_ sender: UIDatePicker) {
         let datePickerView = sender
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd EEE"
-        formatter.locale = Locale(identifier: "ko_KR")
-        todoDate = formatter.string(from: datePickerView.date)
-        print(">>> 할 일 날짜 : \(todoDate)")
+        
+        todoDate = datePickerView.date
+        
     }
     
     // 저장 버튼을 눌렀을 때
     @IBAction func applyButtonPressed(_ sender: Any) {
+        checkDateIsNil(&todoDate)
+        todoTitle = titleTextField.text
+        let task = Todo(content: todoTitle, writeDate: todoDate)
         
-        todoTitle = (titleTextField.text)
-        print(todoTitle)
+        // 만든 task를 localRealm에 저장
+        try! localRealm.write {
+            localRealm.add(task)
+        }
+    
+        
         // 모달 닫는 동작
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    private func checkDateIsNil(_ todoDate: inout Date?) {
+        if(todoDate == nil) {
+            todoDate = Date()
+            
+            let timeZone = TimeZone.autoupdatingCurrent
+            let secondsFromGMT = timeZone.secondsFromGMT(for: todoDate!)
+            todoDate = todoDate?.addingTimeInterval(TimeInterval(secondsFromGMT))
+        }
     }
 }
 

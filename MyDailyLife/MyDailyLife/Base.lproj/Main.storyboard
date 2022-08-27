@@ -21,62 +21,50 @@
                                 <rect key="frame" x="0.0" y="44" width="390" height="766"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="ZCb-vM-RKj">
-                                <rect key="frame" x="300" y="705" width="50" height="75"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ZCb-vM-RKj">
+                                <rect key="frame" x="281" y="705" width="99" height="75"/>
                                 <subviews>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AOp-eE-eHe">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="50" id="wbw-77-STH"/>
-                                            <constraint firstAttribute="width" secondItem="AOp-eE-eHe" secondAttribute="height" multiplier="1:1" id="z81-Nq-OrF"/>
-                                        </constraints>
+                                        <rect key="frame" x="0.0" y="0.0" width="99" height="0.0"/>
                                         <color key="tintColor" systemColor="systemRedColor"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" imagePlacement="top" title="일정" imagePadding="10">
                                             <imageReference key="image" image="calendar.circle.fill" catalog="system" renderingMode="template"/>
                                             <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="50"/>
-                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="12"/>
+                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="16"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="scheduleButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fdU-8a-dHs"/>
                                         </connections>
                                     </button>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rKw-Gl-VWF">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="50" id="8os-JQ-X8f"/>
-                                            <constraint firstAttribute="width" secondItem="rKw-Gl-VWF" secondAttribute="height" multiplier="1:1" id="uO7-8d-rIU"/>
-                                        </constraints>
+                                        <rect key="frame" x="0.0" y="0.0" width="99" height="0.0"/>
                                         <color key="tintColor" systemColor="systemYellowColor"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" imagePlacement="top" title="할 일" imagePadding="10">
                                             <imageReference key="image" image="checkmark.circle.fill" catalog="system" renderingMode="template"/>
                                             <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="50"/>
-                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="12"/>
+                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="16"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="todoButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="V8t-V3-Fpv"/>
                                         </connections>
                                     </button>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FiV-f0-bdo">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="FiV-f0-bdo" secondAttribute="height" multiplier="1:1" id="Con-km-aWj"/>
-                                            <constraint firstAttribute="width" constant="50" id="Hde-AX-fxp"/>
-                                        </constraints>
+                                        <rect key="frame" x="0.0" y="0.0" width="99" height="0.0"/>
                                         <color key="tintColor" systemColor="systemGreenColor"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" imagePlacement="top" title="일기" imagePadding="10">
                                             <imageReference key="image" image="pencil.circle.fill" catalog="system" renderingMode="template"/>
                                             <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="50"/>
-                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="12"/>
+                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="16"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="diaryButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RwL-1T-rsw"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uqk-uc-GaP">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="75"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="99" height="75"/>
                                         <color key="tintColor" systemColor="labelColor"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain">
@@ -96,7 +84,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ZCb-vM-RKj" secondAttribute="bottom" constant="30" id="Nok-he-kzJ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="frD-oy-TR0" secondAttribute="trailing" id="RlK-Gy-box"/>
                             <constraint firstItem="frD-oy-TR0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Sga-hQ-tTV"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZCb-vM-RKj" secondAttribute="trailing" constant="40" id="XU7-zM-CHF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZCb-vM-RKj" secondAttribute="trailing" constant="10" id="XU7-zM-CHF"/>
                             <constraint firstItem="frD-oy-TR0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="YIR-BP-ejM"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="frD-oy-TR0" secondAttribute="bottom" id="cte-23-MDN"/>
                         </constraints>
@@ -117,8 +105,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="calendar.circle.fill" catalog="system" width="128" height="121"/>
-        <image name="checkmark.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="calendar.circle.fill" catalog="system" width="32" height="32"/>
+        <image name="checkmark.circle.fill" catalog="system" width="32" height="32"/>
         <image name="pencil.circle.fill" catalog="system" width="128" height="121"/>
         <image name="plus.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="labelColor">

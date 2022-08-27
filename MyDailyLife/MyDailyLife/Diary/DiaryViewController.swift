@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class DiaryViewController: UIViewController {
 
@@ -41,7 +42,9 @@ class DiaryViewController: UIViewController {
     // 버튼 배열
     lazy var buttons: [UIButton] = [self.happyButton, self.normalButton, self.tiredButton, self.annoyButton, self.sadButton]
     
-    private var diaryDate: String!
+    private var diaryDate: Date!
+    
+    let localRealm = try! Realm() // Realm 데이터를 저장할 localRealm 상수 선언
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,7 +59,7 @@ class DiaryViewController: UIViewController {
     
     // diaryTextView 스타일 지정
     private func diaryTextViewStyle() {
-        diaryTextView.layer.borderWidth = 3.0
+        diaryTextView.layer.borderWidth = 0.5
         diaryTextView.layer.cornerRadius = 10
         diaryTextView.layer.borderColor = UIColor.lightGray.cgColor
         diaryTextView.text =  " 오늘의 일기"
@@ -71,23 +74,29 @@ class DiaryViewController: UIViewController {
     // 일기 날짜 바꾸기
     @IBAction func changeDiaryDate(_ sender: UIDatePicker) {
         let datePickerView = sender
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd EEE"
-        formatter.locale = Locale(identifier: "ko_KR")
-        diaryDate = formatter.string(from: datePickerView.date)
-        print(">>> 일기 날짜 : \(diaryDate)")
+        
+        diaryDate = datePickerView.date
     }
     // 저장 버튼을 눌렀을 때, 모달이 사라지면서 정보를 저장
     @IBAction func applyButtonPressed(_ sender: Any) {
+        checkDateIsNil(&diaryDate)
+        
+        let diaryContent = diaryTextView.text
+        let task = Diary(content: diaryContent, writeDate: diaryDate, emotion: emotionNum)
+        
+        // 만든 task를 localRealm에 저장
+        try! localRealm.write {
+            localRealm.add(task)
+        }
         
         self.dismiss(animated: true)
     }
     
     // emotionStackView의 스타일 지정
     private func emotionStackViewStyle() {
-        emotionStackView.layer.cornerRadius = 10
-        emotionStackView.layer.borderWidth = 3.0
-        emotionStackView.layer.borderColor = UIColor.lightGray.cgColor
+        emotionStackView.layer.cornerRadius = 25
+//        emotionStackView.layer.borderWidth = 3.0
+//        emotionStackView.layer.borderColor = UIColor.lightGray.cgColor
         emotionStackView.backgroundColor = .white
     }
     // 이모션 버튼이 눌렸을 때, 다시 스택 뷰가 닫히도록
@@ -132,7 +141,7 @@ class DiaryViewController: UIViewController {
             selectEmoButton.tintColor = .systemBlue
         default:
             selectEmoButton.setImage(UIImage(systemName: "smiley.fill"), for: .normal)
-            selectEmoButton.setTitle("기뻐", for: .normal)
+            selectEmoButton.setTitle("좋아", for: .normal)
             selectEmoButton.tintColor = .systemYellow
         }
     }
@@ -169,6 +178,7 @@ class DiaryViewController: UIViewController {
             }
         }
         isShowFloating = !isShowFloating
+
     }
     
     // 각 감정이 눌렸을 때
@@ -193,6 +203,15 @@ class DiaryViewController: UIViewController {
         selectImageAndTitle(5)
     }
     
+    private func checkDateIsNil(_ diaryDate: inout Date?) {
+        if(diaryDate == nil) {
+            diaryDate = Date()
+            
+            let timeZone = TimeZone.autoupdatingCurrent
+            let secondsFromGMT = timeZone.secondsFromGMT(for: diaryDate!)
+            diaryDate = diaryDate?.addingTimeInterval(TimeInterval(secondsFromGMT))
+        }
+    }
 }
 
 // textview의 placeholder 지정, 글씨를 입력하면 원래 글씨 색으로 출력

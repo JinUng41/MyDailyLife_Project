@@ -18,35 +18,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="07K-z8-XZI">
-                                <rect key="frame" x="327" y="92" width="60" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="aDk-mE-dPZ"/>
-                                    <constraint firstAttribute="width" constant="60" id="pTh-2m-hRu"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain">
-                                    <imageReference key="image" image="smiley.fill" catalog="system" renderingMode="hierarchical">
-                                        <hierarchicalColors>
-                                            <color systemColor="labelColor"/>
-                                            <color systemColor="secondaryLabelColor"/>
-                                            <color systemColor="tertiaryLabelColor"/>
-                                        </hierarchicalColors>
-                                    </imageReference>
-                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="40" scale="default"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="DiaryButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="X5Z-ce-xHh"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="08.22 금요일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sl8-CE-u4u">
-                                <rect key="frame" x="315" y="59" width="84" height="18"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                <rect key="frame" x="20" y="74" width="172" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="76Z-CC-Zso">
-                                <rect key="frame" x="0.0" y="74" width="414" height="788"/>
+                                <rect key="frame" x="0.0" y="134" width="414" height="728"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="LIa-Vj-ajy">
                                     <size key="itemSize" width="414" height="61"/>
@@ -68,15 +47,29 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="진웅이랑 데이트" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Vc-il-m9s">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="진웅이랑 데이트" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Vc-il-m9s">
                                                     <rect key="frame" x="32" y="20" width="113.5" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DTt-Lq-lpY">
+                                                    <rect key="frame" x="378" y="17.5" width="26" height="26"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="26" id="e8k-m7-ejP"/>
+                                                        <constraint firstAttribute="width" constant="26" id="vAf-Ya-JDL"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="filled" image="square" catalog="system" title=" ">
+                                                        <color key="baseForegroundColor" systemColor="labelColor"/>
+                                                        <color key="baseBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </buttonConfiguration>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="6Vc-il-m9s" firstAttribute="leading" secondItem="fRF-1X-fU8" secondAttribute="leading" constant="18" id="FMu-qO-zxH"/>
+                                                <constraint firstItem="DTt-Lq-lpY" firstAttribute="centerY" secondItem="x7Z-OF-A3y" secondAttribute="centerY" id="W5C-oy-55h"/>
+                                                <constraint firstAttribute="trailing" secondItem="DTt-Lq-lpY" secondAttribute="trailing" constant="10" id="aUU-vO-Ucc"/>
                                                 <constraint firstItem="fRF-1X-fU8" firstAttribute="leading" secondItem="x7Z-OF-A3y" secondAttribute="leading" constant="14" id="dDT-9S-vxG"/>
                                                 <constraint firstItem="fRF-1X-fU8" firstAttribute="centerY" secondItem="x7Z-OF-A3y" secondAttribute="centerY" id="gr7-Ja-KE6"/>
                                                 <constraint firstItem="6Vc-il-m9s" firstAttribute="centerY" secondItem="fRF-1X-fU8" secondAttribute="centerY" id="ywW-C1-MA2"/>
@@ -84,6 +77,7 @@
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="414" height="61"/>
                                         <connections>
+                                            <outlet property="checkButton" destination="DTt-Lq-lpY" id="gzh-Be-feN"/>
                                             <outlet property="contentsLabel" destination="6Vc-il-m9s" id="dJT-Qe-P2D"/>
                                             <outlet property="iconLabel" destination="fRF-1X-fU8" id="XcU-Ld-CQa"/>
                                         </connections>
@@ -109,18 +103,35 @@
                                     </connections>
                                 </collectionReusableView>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="07K-z8-XZI">
+                                <rect key="frame" x="323" y="61.5" width="71" height="61.5"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <imageReference key="image" image="smiley.fill" catalog="system" renderingMode="hierarchical">
+                                        <hierarchicalColors>
+                                            <color systemColor="labelColor"/>
+                                            <color systemColor="secondaryLabelColor"/>
+                                            <color systemColor="tertiaryLabelColor"/>
+                                        </hierarchicalColors>
+                                    </imageReference>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="40" scale="default"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="DiaryButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="X5Z-ce-xHh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="07K-z8-XZI" firstAttribute="top" secondItem="sl8-CE-u4u" secondAttribute="bottom" constant="15" id="0M3-Mn-kB0"/>
                             <constraint firstItem="76Z-CC-Zso" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="3WT-Iq-5uB"/>
-                            <constraint firstItem="sl8-CE-u4u" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="15" id="F7P-Ud-MHD"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="76Z-CC-Zso" secondAttribute="bottom" id="RVD-0X-Tm6"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="sl8-CE-u4u" secondAttribute="trailing" constant="15" id="T2v-C0-jyS"/>
-                            <constraint firstItem="76Z-CC-Zso" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="30" id="Z0d-B5-TUG"/>
+                            <constraint firstItem="sl8-CE-u4u" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="RVn-by-QgT"/>
+                            <constraint firstItem="76Z-CC-Zso" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="90" id="Z0d-B5-TUG"/>
+                            <constraint firstItem="07K-z8-XZI" firstAttribute="centerY" secondItem="sl8-CE-u4u" secondAttribute="centerY" id="fVS-h8-WEE"/>
+                            <constraint firstItem="sl8-CE-u4u" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="30" id="gMz-8j-PaA"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="07K-z8-XZI" secondAttribute="trailing" constant="20" id="k3k-dB-kZK"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="76Z-CC-Zso" secondAttribute="trailing" id="lVL-dc-9kU"/>
-                            <constraint firstItem="07K-z8-XZI" firstAttribute="centerX" secondItem="sl8-CE-u4u" secondAttribute="centerX" id="wPS-bE-dDh"/>
                         </constraints>
                     </view>
                     <connections>
@@ -136,6 +147,7 @@
     </scenes>
     <resources>
         <image name="smiley.fill" catalog="system" width="128" height="121"/>
+        <image name="square" catalog="system" width="128" height="114"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

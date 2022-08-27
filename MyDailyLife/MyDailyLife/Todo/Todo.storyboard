@@ -12,7 +12,7 @@
         <!--Todo View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="TodoViewController" id="Y6W-OH-hqX" customClass="TodoViewController" customModule="FloatingActionButton" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TodoViewController" id="Y6W-OH-hqX" customClass="TodoViewController" customModule="MyDailyLife" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -97,6 +97,7 @@
                     <connections>
                         <outlet property="applyButton" destination="dni-jW-PVk" id="9Kc-03-e1A"/>
                         <outlet property="titleTextField" destination="UP6-NW-DHx" id="5sc-FT-2HD"/>
+                        <outlet property="todoDatePicker" destination="k5y-9T-tMF" id="R4Y-qh-eye"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -106,7 +107,7 @@
     </scenes>
     <resources>
         <image name="checkmark" catalog="system" width="128" height="114"/>
-        <image name="checkmark.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="checkmark.circle.fill" catalog="system" width="32" height="32"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

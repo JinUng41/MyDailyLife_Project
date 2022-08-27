@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B5CF23F28AF5CEE006F31EC /* Object.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5CF23E28AF5CEE006F31EC /* Object.swift */; };
+		5B5CF24228AF5D19006F31EC /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 5B5CF24128AF5D19006F31EC /* Realm */; };
+		5B5CF24428AF5D19006F31EC /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5B5CF24328AF5D19006F31EC /* RealmSwift */; };
 		5BF962EC28ABCD9C00B4262B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF962EB28ABCD9C00B4262B /* AppDelegate.swift */; };
 		5BF962EE28ABCD9C00B4262B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF962ED28ABCD9C00B4262B /* SceneDelegate.swift */; };
 		5BF962F028ABCD9C00B4262B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF962EF28ABCD9C00B4262B /* ViewController.swift */; };
@@ -48,6 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5B5CF23E28AF5CEE006F31EC /* Object.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Object.swift; sourceTree = "<group>"; };
 		5BF962E828ABCD9C00B4262B /* MyDailyLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyDailyLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BF962EB28ABCD9C00B4262B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5BF962ED28ABCD9C00B4262B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +83,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B5CF24428AF5D19006F31EC /* RealmSwift in Frameworks */,
+				5B5CF24228AF5D19006F31EC /* Realm in Frameworks */,
 				5BF9633728ABD43300B4262B /* FSCalendar in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -100,6 +106,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B5CF23D28AF5CD0006F31EC /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				5B5CF23E28AF5CEE006F31EC /* Object.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
 		5BF962DF28ABCD9C00B4262B = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +137,7 @@
 		5BF962EA28ABCD9C00B4262B /* MyDailyLife */ = {
 			isa = PBXGroup;
 			children = (
+				5B5CF23D28AF5CD0006F31EC /* Realm */,
 				5BF9631E28ABCDB300B4262B /* Details */,
 				5BF9631D28ABCDAE00B4262B /* Diary */,
 				5BF9631C28ABCDAA00B4262B /* Todo */,
@@ -212,6 +227,8 @@
 			name = MyDailyLife;
 			packageProductDependencies = (
 				5BF9633628ABD43300B4262B /* FSCalendar */,
+				5B5CF24128AF5D19006F31EC /* Realm */,
+				5B5CF24328AF5D19006F31EC /* RealmSwift */,
 			);
 			productName = MyDailyLife;
 			productReference = 5BF962E828ABCD9C00B4262B /* MyDailyLife.app */;
@@ -287,6 +304,7 @@
 			mainGroup = 5BF962DF28ABCD9C00B4262B;
 			packageReferences = (
 				5BF9633528ABD43300B4262B /* XCRemoteSwiftPackageReference "FSCalendar" */,
+				5B5CF24028AF5D19006F31EC /* XCRemoteSwiftPackageReference "realm-cocoa" */,
 			);
 			productRefGroup = 5BF962E928ABCD9C00B4262B /* Products */;
 			projectDirPath = "";
@@ -341,6 +359,7 @@
 				5BF962EC28ABCD9C00B4262B /* AppDelegate.swift in Sources */,
 				5BF962EE28ABCD9C00B4262B /* SceneDelegate.swift in Sources */,
 				5BF9632428ABCDE500B4262B /* DiaryViewController.swift in Sources */,
+				5B5CF23F28AF5CEE006F31EC /* Object.swift in Sources */,
 				5BF9632028ABCDC900B4262B /* ScheduleViewController.swift in Sources */,
 				5BF9633228ABCFEE00B4262B /* CalendarDetailCell.swift in Sources */,
 				5BF9633428ABD09F00B4262B /* UserData.swift in Sources */,
@@ -682,6 +701,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		5B5CF24028AF5D19006F31EC /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-cocoa.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		5BF9633528ABD43300B4262B /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/WenchaoD/FSCalendar.git";
@@ -693,6 +720,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		5B5CF24128AF5D19006F31EC /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5B5CF24028AF5D19006F31EC /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = Realm;
+		};
+		5B5CF24328AF5D19006F31EC /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5B5CF24028AF5D19006F31EC /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
+		};
 		5BF9633628ABD43300B4262B /* FSCalendar */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5BF9633528ABD43300B4262B /* XCRemoteSwiftPackageReference "FSCalendar" */;

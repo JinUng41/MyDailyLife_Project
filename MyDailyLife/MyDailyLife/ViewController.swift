@@ -1,6 +1,7 @@
 
 import UIKit
 import FSCalendar
+import RealmSwift
 
 class ViewController: UIViewController {
 
@@ -47,6 +48,10 @@ class ViewController: UIViewController {
         setEvents()
         
         configureCalendar()
+        
+        // 플로팅버튼 스타일 지정
+        floatingStackView.backgroundColor = .white
+        floatingStackView.layer.cornerRadius = 45
         
         calendarView.delegate = self
         calendarView.dataSource = self
@@ -172,6 +177,9 @@ extension ViewController: FSCalendarDelegate, FSCalendarDataSource {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM.dd EEE요일"
         let dateString = dateFormatter.string(from: date)
+        
+        // 선택된 날짜 (Date객체)를 DetailViewController에 넘기기
+        vc.currentDate = date
         
         vc.dateString = dateString
         present(vc, animated: true)
