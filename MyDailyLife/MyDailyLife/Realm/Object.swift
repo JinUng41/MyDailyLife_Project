@@ -24,18 +24,22 @@ class Schedule: Object {
         self.endDate = endDate
         self.memo = memo
     }
+    
 }
 
 class Todo: Object {
     @Persisted var content: String? // 내용
     @Persisted var writeDate = Date() // 날짜
-    
+
     @Persisted(primaryKey: true) var _todoId: ObjectId
-    
+
     convenience init(content: String?, writeDate: Date) {
         self.init()
         self.content = content
         self.writeDate = writeDate
+    }
+    override var hash: Int {
+        return _todoId.hash
     }
 }
 
@@ -52,4 +56,9 @@ class Diary: Object {
         self.writeDate = writeDate
         self.emotion = emotion
     }
+    override var hash: Int {
+        return _diaryId.hash
+    }
 }
+
+

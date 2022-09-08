@@ -18,19 +18,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="frD-oy-TR0" customClass="FSCalendar">
-                                <rect key="frame" x="0.0" y="44" width="390" height="766"/>
+                                <rect key="frame" x="0.0" y="44" width="390" height="691"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ZCb-vM-RKj">
-                                <rect key="frame" x="281" y="705" width="99" height="75"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ZCb-vM-RKj">
+                                <rect key="frame" x="288.66666666666669" y="732" width="91.333333333333314" height="68"/>
                                 <subviews>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AOp-eE-eHe">
-                                        <rect key="frame" x="0.0" y="0.0" width="99" height="0.0"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="91.333333333333329" height="0.0"/>
                                         <color key="tintColor" systemColor="systemRedColor"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" imagePlacement="top" title="일정" imagePadding="10">
                                             <imageReference key="image" image="calendar.circle.fill" catalog="system" renderingMode="template"/>
-                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="50"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="45"/>
                                             <fontDescription key="titleFontDescription" type="boldSystem" pointSize="16"/>
                                         </buttonConfiguration>
                                         <connections>
@@ -38,12 +38,12 @@
                                         </connections>
                                     </button>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rKw-Gl-VWF">
-                                        <rect key="frame" x="0.0" y="0.0" width="99" height="0.0"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="91.333333333333329" height="0.0"/>
                                         <color key="tintColor" systemColor="systemYellowColor"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" imagePlacement="top" title="할 일" imagePadding="10">
                                             <imageReference key="image" image="checkmark.circle.fill" catalog="system" renderingMode="template"/>
-                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="50"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="45"/>
                                             <fontDescription key="titleFontDescription" type="boldSystem" pointSize="16"/>
                                         </buttonConfiguration>
                                         <connections>
@@ -51,12 +51,12 @@
                                         </connections>
                                     </button>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FiV-f0-bdo">
-                                        <rect key="frame" x="0.0" y="0.0" width="99" height="0.0"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="91.333333333333329" height="0.0"/>
                                         <color key="tintColor" systemColor="systemGreenColor"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" imagePlacement="top" title="일기" imagePadding="10">
                                             <imageReference key="image" image="pencil.circle.fill" catalog="system" renderingMode="template"/>
-                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="50"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="45"/>
                                             <fontDescription key="titleFontDescription" type="boldSystem" pointSize="16"/>
                                         </buttonConfiguration>
                                         <connections>
@@ -64,29 +64,30 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uqk-uc-GaP">
-                                        <rect key="frame" x="0.0" y="0.0" width="99" height="75"/>
-                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="91.333333333333329" height="68"/>
+                                        <color key="tintColor" systemColor="systemIndigoColor"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain">
                                             <imageReference key="image" image="plus.circle.fill" catalog="system" renderingMode="template"/>
-                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="50"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="45"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="floatingButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bR3-Ya-WB9"/>
                                         </connections>
                                     </button>
                                 </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ZCb-vM-RKj" secondAttribute="bottom" constant="30" id="Nok-he-kzJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ZCb-vM-RKj" secondAttribute="bottom" constant="10" id="Nok-he-kzJ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="frD-oy-TR0" secondAttribute="trailing" id="RlK-Gy-box"/>
                             <constraint firstItem="frD-oy-TR0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Sga-hQ-tTV"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZCb-vM-RKj" secondAttribute="trailing" constant="10" id="XU7-zM-CHF"/>
                             <constraint firstItem="frD-oy-TR0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="YIR-BP-ejM"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="frD-oy-TR0" secondAttribute="bottom" id="cte-23-MDN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="frD-oy-TR0" secondAttribute="bottom" constant="75" id="cte-23-MDN"/>
                         </constraints>
                     </view>
                     <connections>
@@ -105,18 +106,18 @@
         </scene>
     </scenes>
     <resources>
-        <image name="calendar.circle.fill" catalog="system" width="32" height="32"/>
-        <image name="checkmark.circle.fill" catalog="system" width="32" height="32"/>
+        <image name="calendar.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="checkmark.circle.fill" catalog="system" width="128" height="121"/>
         <image name="pencil.circle.fill" catalog="system" width="128" height="121"/>
         <image name="plus.circle.fill" catalog="system" width="128" height="121"/>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

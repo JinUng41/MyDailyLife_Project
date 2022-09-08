@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     // show 상태일 때, 배경 어둡게 처리
     lazy var floatingDimView: UIView = {
         let view = UIView(frame: self.view.frame)
-        view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
+        view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.8)
         view.alpha = 0
         view.isHidden = true
         
@@ -49,10 +49,6 @@ class ViewController: UIViewController {
         
         configureCalendar()
         
-        // 플로팅버튼 스타일 지정
-        floatingStackView.backgroundColor = .white
-        floatingStackView.layer.cornerRadius = 45
-        
         calendarView.delegate = self
         calendarView.dataSource = self
     }
@@ -67,6 +63,9 @@ class ViewController: UIViewController {
         calendarView.appearance.headerTitleFont = UIFont(name: "NotoSansCJKKR-Medium", size: 16)
         calendarView.appearance.titleFont = UIFont(name: "Roboto-Regular", size: 14)
         
+        calendarView.scrollEnabled = true
+        calendarView.scrollDirection = .vertical
+        
         calendarView.appearance.eventDefaultColor = .systemGreen
         calendarView.appearance.eventSelectionColor = .systemGreen
         
@@ -78,7 +77,7 @@ class ViewController: UIViewController {
         calendarView.appearance.titleTodayColor = .white
         calendarView.appearance.titleSelectionColor = .black
         calendarView.appearance.weekdayTextColor = .label
-        calendarView.placeholderType = .none
+//        calendarView.placeholderType = .none
 //        calendarView.layer.cornerRadius = 15
         
     }
@@ -90,6 +89,35 @@ class ViewController: UIViewController {
         let xmas = formatter.date(from: "2022-12-25")
         let sampledate = formatter.date(from: "2022-08-22")
         events = [xmas!, sampledate!]
+    }
+    
+    // 일기, 할 일, 일기 중 버튼이 눌리면 열렸던 플로팅 버튼은 다시 닫혀야겠지? 그걸 구현할거야
+    private func closeFloatingButton() {
+        // 버튼이 눌렸으면 열렸던 플로팅 버튼은 다시 닫혀야겠지.....?
+        buttons.reversed().forEach { button in
+            UIView.animate(withDuration: 0.3) {
+                button.isHidden = true
+                self.view.layoutIfNeeded()
+            }
+        }
+        
+        UIView.animate(withDuration: 0.3, animations: {
+            self.floatingDimView.alpha = 0
+        }) { (_) in
+            self.floatingDimView.isHidden = true
+        }
+        
+        // 상태 flag 값 변경
+        isShowFloating = !isShowFloating
+        
+        // 이미지 회전
+        let rotation = isShowFloating ? CGAffineTransform(rotationAngle: .pi - (.pi / 4)) : CGAffineTransform.identity
+        
+        UIView.animate(withDuration: 0.3) {
+            // 이미지 회전
+            self.floatingButton.transform = rotation
+        }
+        // 여기까지 플로팅 버튼 다시 닫는 동작이야
     }
     
     // 플로팅 버튼이 눌렸을 때 동작하는 함수
@@ -104,7 +132,7 @@ class ViewController: UIViewController {
                 }
             }
             
-            UIView.animate(withDuration: 0.5, animations: {
+            UIView.animate(withDuration: 0.3, animations: {
                 self.floatingDimView.alpha = 0
             }) { (_) in
                 self.floatingDimView.isHidden = true
@@ -113,7 +141,7 @@ class ViewController: UIViewController {
          
             self.floatingDimView.isHidden = false
             
-            UIView.animate(withDuration: 0.5) {
+            UIView.animate(withDuration: 0.3) {
                 self.floatingDimView.alpha = 1
             }
             // show 애니메이션
@@ -145,6 +173,7 @@ class ViewController: UIViewController {
         let storyboard = UIStoryboard(name: "Schedule", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "ScheduleViewController") as! ScheduleViewController
         present(vc, animated: true)
+        closeFloatingButton()
     }
     
     // todo 버튼이 눌렸을 때
@@ -152,6 +181,7 @@ class ViewController: UIViewController {
         let storyboard = UIStoryboard(name: "Todo", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "TodoViewController") as! TodoViewController
         present(vc, animated: true)
+        closeFloatingButton()
     }
     
     // diary 버튼이 눌렸을 때
@@ -159,6 +189,7 @@ class ViewController: UIViewController {
         let storyboard = UIStoryboard(name: "Diary", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "DiaryViewController") as! DiaryViewController
         present(vc, animated: true)
+        closeFloatingButton()
     }
 }
 
@@ -176,11 +207,12 @@ extension ViewController: FSCalendarDelegate, FSCalendarDataSource {
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM.dd EEE요일"
+        dateFormatter.locale = Locale(identifier: "ko_KR")
+//        dateFormatter.timeZone = TimeZone(identifier: "UTC")
         let dateString = dateFormatter.string(from: date)
         
         // 선택된 날짜 (Date객체)를 DetailViewController에 넘기기
         vc.currentDate = date
-        
         vc.dateString = dateString
         present(vc, animated: true)
     }

@@ -10,6 +10,8 @@
 		5B5CF23F28AF5CEE006F31EC /* Object.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5CF23E28AF5CEE006F31EC /* Object.swift */; };
 		5B5CF24228AF5D19006F31EC /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 5B5CF24128AF5D19006F31EC /* Realm */; };
 		5B5CF24428AF5D19006F31EC /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5B5CF24328AF5D19006F31EC /* RealmSwift */; };
+		5BAAE31C28C7662100FB53B3 /* ScheduleListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAAE31B28C7662100FB53B3 /* ScheduleListCell.swift */; };
+		5BAAE31E28C7663200FB53B3 /* TodoListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAAE31D28C7663200FB53B3 /* TodoListCell.swift */; };
 		5BF962EC28ABCD9C00B4262B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF962EB28ABCD9C00B4262B /* AppDelegate.swift */; };
 		5BF962EE28ABCD9C00B4262B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF962ED28ABCD9C00B4262B /* SceneDelegate.swift */; };
 		5BF962F028ABCD9C00B4262B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF962EF28ABCD9C00B4262B /* ViewController.swift */; };
@@ -28,8 +30,6 @@
 		5BF9632C28ABCE2E00B4262B /* Diary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BF9632B28ABCE2E00B4262B /* Diary.storyboard */; };
 		5BF9632E28ABCE3300B4262B /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BF9632D28ABCE3300B4262B /* Detail.storyboard */; };
 		5BF9633028ABCE8500B4262B /* CalendarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF9632F28ABCE8500B4262B /* CalendarHeaderView.swift */; };
-		5BF9633228ABCFEE00B4262B /* CalendarDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF9633128ABCFEE00B4262B /* CalendarDetailCell.swift */; };
-		5BF9633428ABD09F00B4262B /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF9633328ABD09F00B4262B /* UserData.swift */; };
 		5BF9633728ABD43300B4262B /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 5BF9633628ABD43300B4262B /* FSCalendar */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +52,8 @@
 
 /* Begin PBXFileReference section */
 		5B5CF23E28AF5CEE006F31EC /* Object.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Object.swift; sourceTree = "<group>"; };
+		5BAAE31B28C7662100FB53B3 /* ScheduleListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleListCell.swift; sourceTree = "<group>"; };
+		5BAAE31D28C7663200FB53B3 /* TodoListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListCell.swift; sourceTree = "<group>"; };
 		5BF962E828ABCD9C00B4262B /* MyDailyLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyDailyLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BF962EB28ABCD9C00B4262B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5BF962ED28ABCD9C00B4262B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,8 +76,6 @@
 		5BF9632B28ABCE2E00B4262B /* Diary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Diary.storyboard; sourceTree = "<group>"; };
 		5BF9632D28ABCE3300B4262B /* Detail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
 		5BF9632F28ABCE8500B4262B /* CalendarHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHeaderView.swift; sourceTree = "<group>"; };
-		5BF9633128ABCFEE00B4262B /* CalendarDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDetailCell.swift; sourceTree = "<group>"; };
-		5BF9633328ABD09F00B4262B /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,10 +200,10 @@
 		5BF9631E28ABCDB300B4262B /* Details */ = {
 			isa = PBXGroup;
 			children = (
-				5BF9633328ABD09F00B4262B /* UserData.swift */,
 				5BF9632528ABCE1700B4262B /* DetailViewController.swift */,
 				5BF9632F28ABCE8500B4262B /* CalendarHeaderView.swift */,
-				5BF9633128ABCFEE00B4262B /* CalendarDetailCell.swift */,
+				5BAAE31B28C7662100FB53B3 /* ScheduleListCell.swift */,
+				5BAAE31D28C7663200FB53B3 /* TodoListCell.swift */,
 				5BF9632D28ABCE3300B4262B /* Detail.storyboard */,
 			);
 			path = Details;
@@ -359,10 +359,10 @@
 				5BF962EC28ABCD9C00B4262B /* AppDelegate.swift in Sources */,
 				5BF962EE28ABCD9C00B4262B /* SceneDelegate.swift in Sources */,
 				5BF9632428ABCDE500B4262B /* DiaryViewController.swift in Sources */,
+				5BAAE31C28C7662100FB53B3 /* ScheduleListCell.swift in Sources */,
 				5B5CF23F28AF5CEE006F31EC /* Object.swift in Sources */,
+				5BAAE31E28C7663200FB53B3 /* TodoListCell.swift in Sources */,
 				5BF9632028ABCDC900B4262B /* ScheduleViewController.swift in Sources */,
-				5BF9633228ABCFEE00B4262B /* CalendarDetailCell.swift in Sources */,
-				5BF9633428ABD09F00B4262B /* UserData.swift in Sources */,
 				5BF9632628ABCE1700B4262B /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -540,6 +540,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2WJ47F5784;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyDailyLife/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -567,6 +568,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2WJ47F5784;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyDailyLife/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
