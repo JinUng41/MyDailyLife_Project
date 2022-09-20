@@ -10,6 +10,12 @@
 		5B5CF23F28AF5CEE006F31EC /* Object.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5CF23E28AF5CEE006F31EC /* Object.swift */; };
 		5B5CF24228AF5D19006F31EC /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 5B5CF24128AF5D19006F31EC /* Realm */; };
 		5B5CF24428AF5D19006F31EC /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5B5CF24328AF5D19006F31EC /* RealmSwift */; };
+		5B8122B728DA064300C5A023 /* ModifyTodo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B8122B628DA064300C5A023 /* ModifyTodo.storyboard */; };
+		5B8122B928DA066800C5A023 /* ModifySchedule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B8122B828DA066800C5A023 /* ModifySchedule.storyboard */; };
+		5B8122BB28DA068100C5A023 /* ModifyDiary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B8122BA28DA068100C5A023 /* ModifyDiary.storyboard */; };
+		5B8122BD28DA071A00C5A023 /* ModifyScheduleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8122BC28DA071A00C5A023 /* ModifyScheduleVC.swift */; };
+		5B8122BF28DA073D00C5A023 /* ModifyToDoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8122BE28DA073D00C5A023 /* ModifyToDoVC.swift */; };
+		5B8122C128DA076500C5A023 /* ModifyDiaryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8122C028DA076500C5A023 /* ModifyDiaryVC.swift */; };
 		5BAAE31C28C7662100FB53B3 /* ScheduleListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAAE31B28C7662100FB53B3 /* ScheduleListCell.swift */; };
 		5BAAE31E28C7663200FB53B3 /* TodoListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAAE31D28C7663200FB53B3 /* TodoListCell.swift */; };
 		5BF962EC28ABCD9C00B4262B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF962EB28ABCD9C00B4262B /* AppDelegate.swift */; };
@@ -52,6 +58,12 @@
 
 /* Begin PBXFileReference section */
 		5B5CF23E28AF5CEE006F31EC /* Object.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Object.swift; sourceTree = "<group>"; };
+		5B8122B628DA064300C5A023 /* ModifyTodo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ModifyTodo.storyboard; sourceTree = "<group>"; };
+		5B8122B828DA066800C5A023 /* ModifySchedule.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ModifySchedule.storyboard; sourceTree = "<group>"; };
+		5B8122BA28DA068100C5A023 /* ModifyDiary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ModifyDiary.storyboard; sourceTree = "<group>"; };
+		5B8122BC28DA071A00C5A023 /* ModifyScheduleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyScheduleVC.swift; sourceTree = "<group>"; };
+		5B8122BE28DA073D00C5A023 /* ModifyToDoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyToDoVC.swift; sourceTree = "<group>"; };
+		5B8122C028DA076500C5A023 /* ModifyDiaryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyDiaryVC.swift; sourceTree = "<group>"; };
 		5BAAE31B28C7662100FB53B3 /* ScheduleListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleListCell.swift; sourceTree = "<group>"; };
 		5BAAE31D28C7663200FB53B3 /* TodoListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListCell.swift; sourceTree = "<group>"; };
 		5BF962E828ABCD9C00B4262B /* MyDailyLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyDailyLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -175,6 +187,8 @@
 			children = (
 				5BF9631F28ABCDC900B4262B /* ScheduleViewController.swift */,
 				5BF9632728ABCE2300B4262B /* Schedule.storyboard */,
+				5B8122B828DA066800C5A023 /* ModifySchedule.storyboard */,
+				5B8122BC28DA071A00C5A023 /* ModifyScheduleVC.swift */,
 			);
 			path = Schedule;
 			sourceTree = "<group>";
@@ -184,6 +198,8 @@
 			children = (
 				5BF9632128ABCDD800B4262B /* TodoViewController.swift */,
 				5BF9632928ABCE2900B4262B /* Todo.storyboard */,
+				5B8122B628DA064300C5A023 /* ModifyTodo.storyboard */,
+				5B8122BE28DA073D00C5A023 /* ModifyToDoVC.swift */,
 			);
 			path = Todo;
 			sourceTree = "<group>";
@@ -193,6 +209,8 @@
 			children = (
 				5BF9632328ABCDE500B4262B /* DiaryViewController.swift */,
 				5BF9632B28ABCE2E00B4262B /* Diary.storyboard */,
+				5B8122BA28DA068100C5A023 /* ModifyDiary.storyboard */,
+				5B8122C028DA076500C5A023 /* ModifyDiaryVC.swift */,
 			);
 			path = Diary;
 			sourceTree = "<group>";
@@ -324,10 +342,13 @@
 			files = (
 				5BF962F828ABCD9D00B4262B /* LaunchScreen.storyboard in Resources */,
 				5BF9632A28ABCE2900B4262B /* Todo.storyboard in Resources */,
+				5B8122B728DA064300C5A023 /* ModifyTodo.storyboard in Resources */,
 				5BF9632C28ABCE2E00B4262B /* Diary.storyboard in Resources */,
+				5B8122BB28DA068100C5A023 /* ModifyDiary.storyboard in Resources */,
 				5BF962F528ABCD9D00B4262B /* Assets.xcassets in Resources */,
 				5BF9632E28ABCE3300B4262B /* Detail.storyboard in Resources */,
 				5BF962F328ABCD9C00B4262B /* Main.storyboard in Resources */,
+				5B8122B928DA066800C5A023 /* ModifySchedule.storyboard in Resources */,
 				5BF9632828ABCE2300B4262B /* Schedule.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -356,13 +377,16 @@
 				5BF9632228ABCDD800B4262B /* TodoViewController.swift in Sources */,
 				5BF9633028ABCE8500B4262B /* CalendarHeaderView.swift in Sources */,
 				5BF962F028ABCD9C00B4262B /* ViewController.swift in Sources */,
+				5B8122BD28DA071A00C5A023 /* ModifyScheduleVC.swift in Sources */,
 				5BF962EC28ABCD9C00B4262B /* AppDelegate.swift in Sources */,
 				5BF962EE28ABCD9C00B4262B /* SceneDelegate.swift in Sources */,
 				5BF9632428ABCDE500B4262B /* DiaryViewController.swift in Sources */,
 				5BAAE31C28C7662100FB53B3 /* ScheduleListCell.swift in Sources */,
 				5B5CF23F28AF5CEE006F31EC /* Object.swift in Sources */,
+				5B8122BF28DA073D00C5A023 /* ModifyToDoVC.swift in Sources */,
 				5BAAE31E28C7663200FB53B3 /* TodoListCell.swift in Sources */,
 				5BF9632028ABCDC900B4262B /* ScheduleViewController.swift in Sources */,
+				5B8122C128DA076500C5A023 /* ModifyDiaryVC.swift in Sources */,
 				5BF9632628ABCE1700B4262B /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -169,7 +169,7 @@ class ViewController: UIViewController {
     }
     
     // schedule 버튼이 눌렸을 때
-    @IBAction func scheduleButtonAction(_ sender: Any) {
+    @IBAction func scheduleButtonAction(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "Schedule", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "ScheduleViewController") as! ScheduleViewController
         present(vc, animated: true)
@@ -177,7 +177,7 @@ class ViewController: UIViewController {
     }
     
     // todo 버튼이 눌렸을 때
-    @IBAction func todoButtonAction(_ sender: Any) {
+    @IBAction func todoButtonAction(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "Todo", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "TodoViewController") as! TodoViewController
         present(vc, animated: true)
@@ -185,7 +185,7 @@ class ViewController: UIViewController {
     }
     
     // diary 버튼이 눌렸을 때
-    @IBAction func diaryButtonAction(_ sender: Any) {
+    @IBAction func diaryButtonAction(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "Diary", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "DiaryViewController") as! DiaryViewController
         present(vc, animated: true)

@@ -1,31 +1,30 @@
 //
-//  ScheduleViewController.swift
-//  FloatingActionButton
+//  ModifyScheduleVC.swift
+//  DetailPractice
 //
-//  Created by 김진웅 on 2022/08/13.
+//  Created by 김진웅 on 2022/09/06.
 //
 
 import UIKit
 import RealmSwift
 
-class ScheduleViewController: UIViewController {
+class ModifyScheduleVC: UIViewController {
     
-    @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var applyButton: UIButton!
-    
-    @IBOutlet weak var memoTextField: UITextField!
-
+    @IBOutlet weak var deleteButton: UIButton!
+    @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var allDayToggle: UISwitch!
     @IBOutlet weak var startDatePicker: UIDatePicker!
     @IBOutlet weak var exitDatePicker: UIDatePicker!
+    @IBOutlet weak var memoTextField: UITextField!
     
-    private var allDay:Bool = false
+    private var allDay: Bool = false
     private var scheduleTitle: String!
     private var startDate: Date!
     private var exitDate: Date!
     
     let localRealm = try! Realm() // Realm 데이터를 저장할 localRealm 상수 선언
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         defaultDate()
@@ -75,9 +74,7 @@ class ScheduleViewController: UIViewController {
     @IBAction func changeStartDate(_ sender: UIDatePicker) {
         let datePickerView = sender
         startDate = datePickerView.date
-//        exitDatePicker.date = startDate + 3600
     }
-    
     // 종료 날짜 지정 + exitDate를 Date변수로 바꿔서 코드 리팩토링
     @IBAction func changeExitDate(_ sender: UIDatePicker) {
         let datePickerView = sender
@@ -92,7 +89,7 @@ class ScheduleViewController: UIViewController {
         exitDate! = startDate! + 86399
     }
     
-    //
+    // 저장 버튼을 startDate, exitDate가 UTC가 아닌 KST로 Realm에 저장되게 한다.
     private func UTCtoKST(_ startDate: inout Date?, _ exitDate: inout Date?) {
             let timeZone = TimeZone.autoupdatingCurrent
             let secondsFromGMT = timeZone.secondsFromGMT(for: startDate!)
@@ -108,35 +105,22 @@ class ScheduleViewController: UIViewController {
             checkAllDayIsTrue(&startDate, &exitDate, &allDay)
         }
         
-        if (exitDate < startDate) {
-            let alert = UIAlertController(title: "Warning", message: "종료 날짜는 시작 날짜보다 빠를 수 없습니다.", preferredStyle: UIAlertController.Style.alert)
-            let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
-                        
-            }
-            alert.addAction(okAction)
-            present(alert, animated: false, completion: nil)
-            let when = DispatchTime.now() + 1
-            DispatchQueue.main.asyncAfter(deadline: when){
-              // your code with delay
-              alert.dismiss(animated: true, completion: nil)
-            }
+        // 지금 사용자가 화면에서 입력한 것을 Schedule 객체로 만들어 task를 만든다
+        let task = Schedule(content: titleTextField.text!, startDate: startDate, endDate: exitDate, memo: memoTextField.text!, allDay: allDay)
+        
+        // 만든 task를 localRealm에 저장
+        try! localRealm.write {
+            localRealm.add(task)
         }
-        else {
-            // 지금 사용자가 화면에서 입력한 것을 Schedule 객체로 만들어 task를 만든다
-            let task = Schedule(content: titleTextField.text!, startDate: startDate, endDate: exitDate, memo: memoTextField.text!, allDay: allDay)
-            
-            // 만든 task를 localRealm에 저장
-            try! localRealm.write {
-                localRealm.add(task)
-            }
-            
-            self.dismiss(animated: true, completion: nil) // 모달 닫는 동작
-        }
+        self.dismiss(animated: true, completion: nil) // 모달 닫는 동작
+    }
+    
+    // 삭제했을 때, Realm에서 가져온 해당 객체의 id를 기준으로 삭제한다.
+    @IBAction func deleteButtonPressed(_ sender: UIButton) {
     }
 }
 
-
-extension ScheduleViewController:UITextFieldDelegate {
+extension ModifyScheduleVC:UITextFieldDelegate {
     // 자동적으로 키보드가 올라오게끔
     override func viewWillAppear(_ animated: Bool) {
         self.titleTextField.becomeFirstResponder()

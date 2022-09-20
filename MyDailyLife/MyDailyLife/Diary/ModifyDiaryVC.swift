@@ -1,17 +1,18 @@
 //
-//  DiaryViewController.swift
-//  FloatingActionButton
+//  ModifyDiaryVC.swift
+//  DetailPractice
 //
-//  Created by 김진웅 on 2022/08/13.
+//  Created by 김진웅 on 2022/09/06.
 //
 
 import UIKit
 import RealmSwift
 
-class DiaryViewController: UIViewController {
+class ModifyDiaryVC: UIViewController {
 
     @IBOutlet var currentView: UIView!
     @IBOutlet weak var applyButton: UIButton!
+    @IBOutlet weak var deleteButton: UIButton!
     
     @IBOutlet weak var diaryTextView: UITextView!
     
@@ -49,20 +50,12 @@ class DiaryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        defaultDate()
-        
         diaryTextViewStyle()
         diaryTextView.delegate = self
         emotionStackViewStyle()
         selectImageAndTitle(1)
         
         currentView.bringSubviewToFront(emotionStackView)
-    }
-    
-    // 기본 날짜 지정 (nil값 체크 안되게..)
-    private func defaultDate() {
-        diaryDatePicker.date = Date()
-        diaryDate = diaryDatePicker.date
     }
     
     // diaryTextView 스타일 지정
@@ -84,8 +77,9 @@ class DiaryViewController: UIViewController {
         let datePickerView = sender
         diaryDate = datePickerView.date
     }
+    
     // 저장 버튼을 눌렀을 때, 모달이 사라지면서 정보를 저장
-    @IBAction func applyButtonPressed(_ sender: UIButton) {
+    @IBAction func applyButtonPressed(_ sender: Any) {
         UTCtoKST(&diaryDate)
         
         let diaryContent = diaryTextView.text
@@ -99,11 +93,17 @@ class DiaryViewController: UIViewController {
         self.dismiss(animated: true)
     }
     
+    // 삭제 버튼을 눌렀을 때,
+    @IBAction func deleteButtonPressed(_ sender: UIButton) {
+        // 구현해야될 것
+        // 삭제 버튼이 눌리면 Realm에서 해당 내용을 담은 객체(?) 삭제
+        
+        self.dismiss(animated: true, completion: nil) // 모달 닫는 동작
+    }
+    
     // emotionStackView의 스타일 지정
     private func emotionStackViewStyle() {
         emotionStackView.layer.cornerRadius = 25
-//        emotionStackView.layer.borderWidth = 3.0
-//        emotionStackView.layer.borderColor = UIColor.lightGray.cgColor
         emotionStackView.backgroundColor = .white
     }
     // 이모션 버튼이 눌렸을 때, 다시 스택 뷰가 닫히도록
@@ -218,7 +218,7 @@ class DiaryViewController: UIViewController {
 }
 
 // textview의 placeholder 지정, 글씨를 입력하면 원래 글씨 색으로 출력
-extension DiaryViewController: UITextViewDelegate {
+extension ModifyDiaryVC: UITextViewDelegate {
     
     func textViewDidEndEditing(_ textView: UITextView) {
             if diaryTextView.text.isEmpty {

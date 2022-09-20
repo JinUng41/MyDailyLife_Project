@@ -11,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Diary View Controller-->
+        <!--Modify DiaryVC-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="DiaryViewController" id="Y6W-OH-hqX" customClass="DiaryViewController" customModule="MyDailyLife" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ModifyDiaryVC" id="Y6W-OH-hqX" customClass="ModifyDiaryVC" customModule="DetailPractice" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -36,7 +36,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qhF-qX-EkF">
-                                <rect key="frame" x="316.33333333333331" y="66" width="53.666666666666686" height="62.333333333333343"/>
+                                <rect key="frame" x="316.33333333333331" y="77" width="53.666666666666686" height="62.333333333333343"/>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" imagePlacement="top" title="저장" imagePadding="10">
@@ -46,6 +46,17 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="applyButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="JiO-wA-hp9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jmo-Y9-5Iz">
+                                <rect key="frame" x="252.66666666666666" y="77" width="53.666666666666657" height="62.333333333333343"/>
+                                <color key="tintColor" systemColor="systemRedColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="multiply" catalog="system" imagePlacement="top" title="삭제" imagePadding="10">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="15"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="deleteButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="dS2-p5-hNQ"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="uec-Uy-11g">
@@ -69,7 +80,7 @@
                                     </datePicker>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="3Pa-Yd-O5U"/>
+                                    <constraint firstAttribute="height" constant="40" id="abK-iC-1P8"/>
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m6U-bl-Uee">
@@ -168,7 +179,7 @@
                             <constraint firstItem="lEe-0D-z1v" firstAttribute="trailing" secondItem="uec-Uy-11g" secondAttribute="trailing" id="74y-uP-8dS"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="4Al-Ae-DVs" secondAttribute="bottom" constant="270" id="8cp-Ua-Ec9"/>
                             <constraint firstItem="m6U-bl-Uee" firstAttribute="top" secondItem="uec-Uy-11g" secondAttribute="bottom" constant="20" id="AdI-Pn-8H4"/>
-                            <constraint firstItem="qhF-qX-EkF" firstAttribute="centerY" secondItem="iMz-N5-nD6" secondAttribute="centerY" id="H8R-SD-m5a"/>
+                            <constraint firstItem="jmo-Y9-5Iz" firstAttribute="top" secondItem="ZiM-eh-7Jl" secondAttribute="top" id="GpD-LY-NeK"/>
                             <constraint firstItem="ZiM-eh-7Jl" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="30" id="JfZ-qv-Z1J"/>
                             <constraint firstItem="uec-Uy-11g" firstAttribute="trailing" secondItem="qhF-qX-EkF" secondAttribute="trailing" id="K7h-oc-zY6"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="m6U-bl-Uee" secondAttribute="trailing" constant="160" id="Kdd-lv-Ydc"/>
@@ -177,15 +188,18 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="qhF-qX-EkF" secondAttribute="trailing" constant="20" id="S54-pq-0VH"/>
                             <constraint firstItem="iMz-N5-nD6" firstAttribute="leading" secondItem="ZiM-eh-7Jl" secondAttribute="trailing" constant="10" id="UK9-1f-1Ms"/>
                             <constraint firstItem="lEe-0D-z1v" firstAttribute="leading" secondItem="uec-Uy-11g" secondAttribute="leading" id="Y4I-Er-jCe"/>
+                            <constraint firstItem="qhF-qX-EkF" firstAttribute="top" secondItem="ZiM-eh-7Jl" secondAttribute="top" id="cb5-ng-h32"/>
                             <constraint firstItem="4Al-Ae-DVs" firstAttribute="leading" secondItem="uec-Uy-11g" secondAttribute="leading" id="iC9-V6-4XU"/>
                             <constraint firstItem="m6U-bl-Uee" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="160" id="tjJ-xc-Byp"/>
                             <constraint firstItem="uec-Uy-11g" firstAttribute="top" secondItem="ZiM-eh-7Jl" secondAttribute="bottom" constant="30" id="yTi-ow-QBM"/>
+                            <constraint firstItem="qhF-qX-EkF" firstAttribute="leading" secondItem="jmo-Y9-5Iz" secondAttribute="trailing" constant="10" id="zmL-IF-JSr"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="annoyButton" destination="DYq-Ra-Gqt" id="kZK-wG-DcA"/>
                         <outlet property="applyButton" destination="qhF-qX-EkF" id="dIN-Pr-1Yn"/>
                         <outlet property="currentView" destination="5EZ-qb-Rvc" id="qnL-kn-Itb"/>
+                        <outlet property="deleteButton" destination="jmo-Y9-5Iz" id="V0A-pD-DgP"/>
                         <outlet property="diaryDatePicker" destination="qAr-am-hVX" id="a45-RU-Mbc"/>
                         <outlet property="diaryTextView" destination="4Al-Ae-DVs" id="JBJ-vm-BiD"/>
                         <outlet property="emotionStackView" destination="lEe-0D-z1v" id="l6c-tQ-jX9"/>
@@ -203,6 +217,7 @@
     </scenes>
     <resources>
         <image name="checkmark" catalog="system" width="128" height="114"/>
+        <image name="multiply" catalog="system" width="128" height="111"/>
         <image name="pencil.circle.fill" catalog="system" width="128" height="123"/>
         <image name="smiley.fill" catalog="system" width="128" height="123"/>
         <systemColor name="labelColor">

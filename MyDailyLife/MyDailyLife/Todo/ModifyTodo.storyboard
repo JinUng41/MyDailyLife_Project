@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Todo View Controller-->
+        <!--Modify To DoVC-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="TodoViewController" id="Y6W-OH-hqX" customClass="TodoViewController" customModule="MyDailyLife" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ModifyToDoVC" id="Y6W-OH-hqX" customClass="ModifyToDoVC" customModule="DetailPractice" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -47,6 +47,17 @@
                                     <action selector="applyButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="AhG-Pj-ovG"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AWG-mf-Xpt">
+                                <rect key="frame" x="252.66666666666666" y="77" width="53.666666666666657" height="62.333333333333343"/>
+                                <color key="tintColor" systemColor="systemRedColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="multiply" catalog="system" imagePlacement="top" title="삭제" imagePadding="10">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="15"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="deleteButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="TwI-iR-qYv"/>
+                                </connections>
+                            </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" 할 일 추가" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="UP6-NW-DHx">
                                 <rect key="frame" x="20" y="147" width="350" height="31.666666666666657"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
@@ -66,14 +77,14 @@
                                         <constraints>
                                             <constraint firstAttribute="width" constant="250" id="ocr-QV-EXd"/>
                                         </constraints>
-                                        <locale key="locale" localeIdentifier="ko"/>
+                                        <locale key="locale" localeIdentifier="ko_KR"/>
                                         <connections>
                                             <action selector="changeTodoDate:" destination="Y6W-OH-hqX" eventType="valueChanged" id="17I-6v-RwS"/>
                                         </connections>
                                     </datePicker>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="k8H-Do-4pS"/>
+                                    <constraint firstAttribute="height" constant="40" id="aZN-vc-qSk"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -89,13 +100,16 @@
                             <constraint firstItem="q1q-0M-9ge" firstAttribute="trailing" secondItem="UP6-NW-DHx" secondAttribute="trailing" id="Umq-c7-uEx"/>
                             <constraint firstItem="q1q-0M-9ge" firstAttribute="leading" secondItem="UP6-NW-DHx" secondAttribute="leading" id="X5k-mn-6sC"/>
                             <constraint firstItem="TtP-Yk-dix" firstAttribute="top" secondItem="cbx-MD-VyW" secondAttribute="top" id="bH8-ep-Rtc"/>
+                            <constraint firstItem="AWG-mf-Xpt" firstAttribute="top" secondItem="cbx-MD-VyW" secondAttribute="top" id="ood-t7-Btc"/>
                             <constraint firstItem="UP6-NW-DHx" firstAttribute="trailing" secondItem="dni-jW-PVk" secondAttribute="trailing" id="p3R-ze-9w6"/>
                             <constraint firstItem="TtP-Yk-dix" firstAttribute="leading" secondItem="cbx-MD-VyW" secondAttribute="trailing" constant="10" id="qoG-YN-Xz8"/>
+                            <constraint firstItem="dni-jW-PVk" firstAttribute="leading" secondItem="AWG-mf-Xpt" secondAttribute="trailing" constant="10" id="saU-9A-QP7"/>
                             <constraint firstItem="q1q-0M-9ge" firstAttribute="top" secondItem="UP6-NW-DHx" secondAttribute="bottom" constant="30" id="zQU-R6-UcU"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="applyButton" destination="dni-jW-PVk" id="9Kc-03-e1A"/>
+                        <outlet property="deleteButton" destination="AWG-mf-Xpt" id="Gwp-pP-iZ8"/>
                         <outlet property="titleTextField" destination="UP6-NW-DHx" id="5sc-FT-2HD"/>
                         <outlet property="todoDatePicker" destination="k5y-9T-tMF" id="R4Y-qh-eye"/>
                     </connections>
@@ -108,11 +122,15 @@
     <resources>
         <image name="checkmark" catalog="system" width="128" height="114"/>
         <image name="checkmark.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="multiply" catalog="system" width="128" height="111"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

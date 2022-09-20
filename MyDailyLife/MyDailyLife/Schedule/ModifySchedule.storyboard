@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_72" orientation="portrait" appearance="light"/>
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
@@ -10,12 +10,12 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Schedule View Controller-->
+        <!--Modify ScheduleVC-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="ScheduleViewController" id="Y6W-OH-hqX" customClass="ScheduleViewController" customModule="MyDailyLife" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ModifyScheduleVC" id="Y6W-OH-hqX" customClass="ModifyScheduleVC" customModule="DetailPractice" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="8Wi-az-oNs">
@@ -27,7 +27,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ssb-Qa-mPI">
-                                <rect key="frame" x="356.33333333333331" y="89" width="53.666666666666686" height="62.333333333333343"/>
+                                <rect key="frame" x="319.33333333333331" y="89" width="53.666666666666686" height="62.333333333333343"/>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" imagePlacement="top" title="저장" imagePadding="10">
@@ -36,7 +36,18 @@
                                     <color key="baseForegroundColor" systemColor="labelColor"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="applyButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="fan-fm-6Ja"/>
+                                    <action selector="applyButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="KLx-28-pLb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ybe-yG-gPT">
+                                <rect key="frame" x="255.66666666666666" y="89" width="53.666666666666657" height="62.333333333333343"/>
+                                <color key="tintColor" systemColor="systemRedColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="multiply" catalog="system" imagePlacement="top" title="삭제" imagePadding="10">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="15"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="deleteButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="J5Y-3n-gK7"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="일정" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="equ-8c-1qj">
@@ -48,85 +59,80 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" 일정 추가" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="q2K-rR-vGn">
-                                <rect key="frame" x="20" y="159" width="390" height="31.666666666666657"/>
+                                <rect key="frame" x="20" y="159" width="353" height="31.666666666666657"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES" smartInsertDeleteType="no" smartQuotesType="no"/>
                             </textField>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ajY-1V-HKU">
-                                <rect key="frame" x="20" y="220.66666666666663" width="390" height="120"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="하루 종일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EtF-oM-e8h">
+                                <rect key="frame" x="20" y="220.66666666666666" width="74.333333333333329" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="TEc-4A-g8j">
+                                <rect key="frame" x="324" y="217.33333333333334" width="51" height="31"/>
+                                <connections>
+                                    <action selector="allDayToggleTapped:" destination="Y6W-OH-hqX" eventType="valueChanged" id="6wL-Mu-97l"/>
+                                </connections>
+                            </switch>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ajY-1V-HKU">
+                                <rect key="frame" x="20" y="264.66666666666669" width="353" height="90"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mAF-af-ffj">
-                                        <rect key="frame" x="0.0" y="0.0" width="390" height="40"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="하루 종일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tfL-vP-Xzo">
-                                                <rect key="frame" x="0.0" y="0.0" width="341" height="40"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="leading" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="8BE-BV-71R">
-                                                <rect key="frame" x="341" y="0.0" width="51" height="40"/>
-                                                <connections>
-                                                    <action selector="allDayToggleTapped:" destination="Y6W-OH-hqX" eventType="valueChanged" id="Hic-zd-QXQ"/>
-                                                </connections>
-                                            </switch>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="xqk-ve-Tx6"/>
-                                        </constraints>
-                                    </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="VZt-fD-R0N">
-                                        <rect key="frame" x="0.0" y="40.000000000000028" width="390" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="353" height="40"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="시작 : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c9A-3K-RRh">
-                                                <rect key="frame" x="0.0" y="0.0" width="140" height="40"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="시작 : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c9A-3K-RRh" userLabel="시작 :">
+                                                <rect key="frame" x="0.0" y="0.0" width="103" height="40"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="GRW-bx-xN0">
-                                                <rect key="frame" x="140" y="0.0" width="250" height="40"/>
+                                                <rect key="frame" x="103" y="0.0" width="250" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="250" id="QsZ-L3-PMe"/>
                                                 </constraints>
                                                 <locale key="locale" localeIdentifier="ko_KR"/>
                                                 <connections>
-                                                    <action selector="changeStartDate:" destination="Y6W-OH-hqX" eventType="valueChanged" id="1b5-pJ-aFj"/>
+                                                    <action selector="changeStartDate:" destination="Y6W-OH-hqX" eventType="valueChanged" id="kim-b4-aYa"/>
                                                 </connections>
                                             </datePicker>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="9dB-PW-csB"/>
+                                            <constraint firstAttribute="height" constant="40" id="r4S-0q-lGA"/>
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cZl-Lu-qeA">
-                                        <rect key="frame" x="0.0" y="80.000000000000028" width="390" height="40"/>
+                                        <rect key="frame" x="0.0" y="50" width="353" height="40"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="종료 : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mMj-uf-tYv">
-                                                <rect key="frame" x="0.0" y="0.0" width="140" height="40"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="103" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="103" id="siw-Mm-kBD"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="Vfg-VI-HIj">
-                                                <rect key="frame" x="140" y="0.0" width="250" height="40"/>
+                                                <rect key="frame" x="103" y="0.0" width="250" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="250" id="V7m-hj-eKS"/>
                                                 </constraints>
                                                 <locale key="locale" localeIdentifier="ko_KR"/>
                                                 <connections>
-                                                    <action selector="changeExitDate:" destination="Y6W-OH-hqX" eventType="valueChanged" id="385-my-Txs"/>
+                                                    <action selector="changeExitDate:" destination="Y6W-OH-hqX" eventType="valueChanged" id="Ukp-ME-bbH"/>
                                                 </connections>
                                             </datePicker>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="T10-wc-d0I"/>
+                                            <constraint firstAttribute="height" constant="40" id="18J-Mx-xZ2"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
                             </stackView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" 메모 추가" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="I7x-HK-Qyg">
-                                <rect key="frame" x="20" y="370.66666666666669" width="390" height="25.666666666666686"/>
+                                <rect key="frame" x="20" y="384.66666666666669" width="353" height="25.666666666666686"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES" smartInsertDeleteType="no" smartQuotesType="no"/>
                             </textField>
@@ -135,15 +141,21 @@
                         <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="8Wi-az-oNs" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="1IN-c1-i2F"/>
+                            <constraint firstItem="EtF-oM-e8h" firstAttribute="top" secondItem="q2K-rR-vGn" secondAttribute="bottom" constant="30" id="1uh-6i-a1F"/>
                             <constraint firstItem="q2K-rR-vGn" firstAttribute="top" secondItem="equ-8c-1qj" secondAttribute="bottom" constant="30" id="5tF-Xj-zoJ"/>
                             <constraint firstItem="ajY-1V-HKU" firstAttribute="trailing" secondItem="q2K-rR-vGn" secondAttribute="trailing" id="62M-xO-rFi"/>
                             <constraint firstItem="Ssb-Qa-mPI" firstAttribute="top" secondItem="8Wi-az-oNs" secondAttribute="top" id="6ET-qj-qBh"/>
                             <constraint firstItem="equ-8c-1qj" firstAttribute="top" secondItem="8Wi-az-oNs" secondAttribute="top" id="KaE-Hd-5R9"/>
                             <constraint firstItem="I7x-HK-Qyg" firstAttribute="top" secondItem="ajY-1V-HKU" secondAttribute="bottom" constant="30" id="Lap-A1-G9k"/>
+                            <constraint firstItem="ybe-yG-gPT" firstAttribute="top" secondItem="8Wi-az-oNs" secondAttribute="top" id="Mob-UH-OdX"/>
                             <constraint firstItem="equ-8c-1qj" firstAttribute="leading" secondItem="8Wi-az-oNs" secondAttribute="trailing" constant="10" id="OSK-8M-KPu"/>
+                            <constraint firstItem="ajY-1V-HKU" firstAttribute="top" secondItem="EtF-oM-e8h" secondAttribute="bottom" constant="20" id="QDl-ok-8BA"/>
+                            <constraint firstItem="EtF-oM-e8h" firstAttribute="leading" secondItem="q2K-rR-vGn" secondAttribute="leading" id="Rm4-ck-QzL"/>
+                            <constraint firstItem="TEc-4A-g8j" firstAttribute="trailing" secondItem="q2K-rR-vGn" secondAttribute="trailing" id="V7M-lB-lnW"/>
+                            <constraint firstItem="TEc-4A-g8j" firstAttribute="centerY" secondItem="EtF-oM-e8h" secondAttribute="centerY" id="VF3-ok-Xzp"/>
+                            <constraint firstItem="Ssb-Qa-mPI" firstAttribute="leading" secondItem="ybe-yG-gPT" secondAttribute="trailing" constant="10" id="a6C-Nw-97H"/>
                             <constraint firstItem="8Wi-az-oNs" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="30" id="ffg-29-PYC"/>
                             <constraint firstItem="I7x-HK-Qyg" firstAttribute="leading" secondItem="ajY-1V-HKU" secondAttribute="leading" id="kId-su-OiS"/>
-                            <constraint firstItem="ajY-1V-HKU" firstAttribute="top" secondItem="q2K-rR-vGn" secondAttribute="bottom" constant="30" id="peU-Lf-g2z"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Ssb-Qa-mPI" secondAttribute="trailing" constant="20" id="srT-oq-Wjk"/>
                             <constraint firstItem="ajY-1V-HKU" firstAttribute="leading" secondItem="q2K-rR-vGn" secondAttribute="leading" id="toE-bG-0lo"/>
                             <constraint firstItem="I7x-HK-Qyg" firstAttribute="trailing" secondItem="ajY-1V-HKU" secondAttribute="trailing" id="wIa-Lu-uvf"/>
@@ -152,12 +164,13 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="allDayToggle" destination="8BE-BV-71R" id="qa5-la-TKD"/>
-                        <outlet property="applyButton" destination="Ssb-Qa-mPI" id="guP-B8-DcK"/>
-                        <outlet property="exitDatePicker" destination="Vfg-VI-HIj" id="FAy-WF-A14"/>
-                        <outlet property="memoTextField" destination="I7x-HK-Qyg" id="jbg-th-EGb"/>
-                        <outlet property="startDatePicker" destination="GRW-bx-xN0" id="IoP-0D-kXs"/>
-                        <outlet property="titleTextField" destination="q2K-rR-vGn" id="kO7-RQ-WGv"/>
+                        <outlet property="allDayToggle" destination="TEc-4A-g8j" id="Bdc-lB-43v"/>
+                        <outlet property="applyButton" destination="Ssb-Qa-mPI" id="uf1-6B-lYH"/>
+                        <outlet property="deleteButton" destination="ybe-yG-gPT" id="reB-hL-HCH"/>
+                        <outlet property="exitDatePicker" destination="Vfg-VI-HIj" id="ReS-65-b11"/>
+                        <outlet property="memoTextField" destination="I7x-HK-Qyg" id="sff-yJ-iKU"/>
+                        <outlet property="startDatePicker" destination="GRW-bx-xN0" id="lpn-A4-0DR"/>
+                        <outlet property="titleTextField" destination="q2K-rR-vGn" id="Ibw-l7-0Rz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -168,6 +181,7 @@
     <resources>
         <image name="calendar.circle.fill" catalog="system" width="128" height="123"/>
         <image name="checkmark" catalog="system" width="128" height="114"/>
+        <image name="multiply" catalog="system" width="128" height="111"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
